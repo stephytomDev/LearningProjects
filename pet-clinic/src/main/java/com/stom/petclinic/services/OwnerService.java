@@ -1,17 +1,13 @@
 package com.stom.petclinic.services;
 
-import java.util.Set;
+import java.util.List;
 
 import com.stom.petclinic.model.Owner;
 
-public interface OwnerService {
+public interface OwnerService extends CrudService<Owner, Long>{
 	
 	Owner findOwnerByLastName(String lastName);
 	
-	Owner findById(long id);
-	
-	Owner Save(Owner owner);
-	
-	Set<Owner> findAll();
+    List<Owner> findAllByLastNameLike(String lastName);
 
 }
